@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 16:49:38 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/20 15:51:17 by enoviell         ###   ########.fr       */
+/*   Created: 2023/01/21 11:32:59 by enoviell          #+#    #+#             */
+/*   Updated: 2023/01/21 17:45:45 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*str;
 	size_t	i;
+	size_t	j;
 
+	if (s == NULL || start >= ft_strlen(s))
+		return (NULL);
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	while (src[i] != '\0' && i < dstsize - 1)
+	j = 0;
+	while (s[i])
 	{
-		dst[i] = src[i];
-		i++;
+		if ( i >= start && j < len)
+		str[j++] = s[i];
+	i++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	str[j] = '\0';
+	return (str);
 }

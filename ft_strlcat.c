@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enoviell <enoviell@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 10:38:17 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/20 10:56:13 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:51:13 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 }
 /*calcolandolunghezza delle stringhe di destinazione e di origine.
 se la lunghezza delle due stringhe e > della dime max, copia solo la parte
- che ci sta nella stringa di destinazioneaggiungo il terminatore 
-altrimnentucopia tutta la stringa di src nella stringa di dest e si ritorna 
+ che ci sta nella stringa di destinazioneaggiungo il terminatore
+altrimnentucopia tutta la stringa di src nella stringa di dest e si ritorna
 la lunghezza totale delle due stringhe concaten.*/
