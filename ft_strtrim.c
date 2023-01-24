@@ -6,7 +6,7 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:23:08 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/21 15:24:53 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/22 17:01:32 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*result;
 	int		i;
 	int		j;
-	
+
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	while (start <= end && ft_strchr(set, s1[start]) != NULL)

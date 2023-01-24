@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 11:32:59 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/22 17:01:15 by enoviell         ###   ########.fr       */
+/*   Created: 2023/01/23 15:29:32 by enoviell          #+#    #+#             */
+/*   Updated: 2023/01/23 15:40:00 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*str;
-	size_t	i;
-	size_t	j;
+	int	i;
 
-	if (s == NULL || start >= ft_strlen(s))
-		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
-		if (i >= start && j < len)
-		str[j++] = s[i];
-	i++;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
-	str[j] = '\0';
-	return (str);
 }
