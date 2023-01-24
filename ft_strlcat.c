@@ -6,7 +6,7 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 10:38:17 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/24 11:15:31 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:10:38 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	max_len;
 
 	if ( !src && !dst)
-		return(NULL);
+		return(0);
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	max_len = dst_len + src_len;
