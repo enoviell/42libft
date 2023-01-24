@@ -6,7 +6,7 @@
 #    By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 13:58:39 by enoviell          #+#    #+#              #
-#    Updated: 2023/01/24 11:29:17 by enoviell         ###   ########.fr        #
+#    Updated: 2023/01/24 12:23:41 by enoviell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,5 +49,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
-
+.PHONY: all clean fclean re bonus

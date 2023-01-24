@@ -6,34 +6,35 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 10:38:17 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/24 12:10:38 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:36:54 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	max_len;
+	size_t	i;
+	size_t	j;
 
-	if ( !src && !dst)
-		return(0);
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	max_len = dst_len + src_len;
-	if (size <= dst_len)
-		return (src_len + size);
-	if (src_len < size - dst_len)
-		memcpy(dst + dst_len, src, src_len + 1);
-	else
+	if (!src && !dst)
+		return (0);
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	i = 0;
+	j = 0;
+	while (dst[j] && j < dstsize)
+		j++;
+	while ((i + j + 1) < dstsize && src[i])
 	{
-		memcpy(dst + dst_len, src, size - dst_len - 1);
-		dst[size - 1] = '\0';
+		dst[i + j] = src[i];
+		i++;
 	}
-	return (max_len);
+	if (j != dstsize)
+		dst[i + j] = '\0';
+	return (j + ft_strlen(src));
 }
+
 /*calcolandolunghezza delle stringhe di destinazione e di origine.
 se la lunghezza delle due stringhe e > della dime max, copia solo la parte
  che ci sta nella stringa di destinazioneaggiungo il terminatore

@@ -6,7 +6,7 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:26:14 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/23 17:59:31 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:41:53 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*str1;
-	unsigned int	i;
+	int		i;
+	char	*str;
 
-	i = 0;
 	if (!s || !f)
 		return (NULL);
-	str1 = (char *)malloc(ft_strlen(s) + 1);
-	if (!str1)
+	str = (char *) malloc (sizeof(char) * (ft_strlen((char *)s) + 1));
+	if (!str)
 		return (NULL);
-	while (str1[i] != '\0')
+	i = 0;
+	while (s[i])
 	{
-		str1[i] = f (i, s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	str1[i] = '\0';
-	return (str1);
+	str[i] = '\0';
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:52:27 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/24 11:24:13 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:40:45 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	y = 0;
 	if (*little == '\0' || little == NULL || n == 0)
 		return ((char *)big);
-
 	while (x < n)
 	{
 		if (big[x] != little[y])
