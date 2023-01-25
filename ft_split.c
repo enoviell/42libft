@@ -6,28 +6,31 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 15:39:30 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/25 11:12:46 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:45:11 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_counter(const char *s, char c)
+static size_t	ft_counter(const char *s, char c)
 {
-	int	i;
-	int	count;
+	size_t	count;
+	size_t	i;
 
 	i = 0;
 	count = 0;
 	while (s[i] == c)
-			i++;
+		i++;
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1] != c)
-			count++;
-		i++;
-		if (s[i] == c && s[i + 1] == '\0')
-			break ;
+		if (s[i] != c)
+		{
+			++count;
+			while (s[i] && s[i] != c)
+				++i;
+		}
+		else
+			i++;
 	}
 	return (count + 1);
 }
