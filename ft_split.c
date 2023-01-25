@@ -6,13 +6,13 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 15:39:30 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/24 10:42:20 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/25 11:12:46 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_counter(const char *s, char c)
+static int	ft_counter(const char *s, char c)
 {
 	int	i;
 	int	count;

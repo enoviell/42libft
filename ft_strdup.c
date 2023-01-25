@@ -6,7 +6,7 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 17:03:50 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/20 17:19:52 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/25 11:14:38 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,3 @@ char	*ft_strdup(const char *src)
 	dup[i] = '\0';
 	return (dup);
 }
-
-/* char* ft_strdup(const char* src)
-{
-	size_t	len ;
-	char*	dup ;
-
-	len = ft_strlen(src) + 1;
-	dup = malloc(len);
-    if (!dup)
-        return (NULL);
-    memcpy(dup, src, len);
-    return (dup);
-}
-*/

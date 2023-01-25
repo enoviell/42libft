@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 14:11:08 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/25 11:14:24 by enoviell         ###   ########.fr       */
+/*   Created: 2023/01/25 12:25:51 by enoviell          #+#    #+#             */
+/*   Updated: 2023/01/25 12:30:41 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	size_t	i;
+	t_list	*tmp;
 
-	i = 0;
-	while (i < ft_strlen(str) + 1)
+	if(!lst || !del)
+		return ;
+	while(lst && *lst)
 	{
-		if (str[i] == c)
-			return ((char *)str + i);
-		i++;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	return (NULL);
 }
+
