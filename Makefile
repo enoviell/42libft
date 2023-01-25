@@ -6,7 +6,7 @@
 #    By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 13:58:39 by enoviell          #+#    #+#              #
-#    Updated: 2023/01/25 12:24:50 by enoviell         ###   ########.fr        #
+#    Updated: 2023/01/25 17:50:33 by enoviell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,10 @@ OBJSBONUS = ${BONUS:.c=.o}
 CC = gcc
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 .c.o:
-		${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
+		${CC} ${FLAGS} -g -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
 		ar rcs ${NAME} ${OBJS}
@@ -49,7 +49,3 @@ fclean: clean
 		${RM} ${NAME}
 
 re: fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
