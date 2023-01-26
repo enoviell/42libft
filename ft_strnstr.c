@@ -6,7 +6,7 @@
 /*   By: enoviell <enoviell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:52:27 by enoviell          #+#    #+#             */
-/*   Updated: 2023/01/25 17:40:18 by enoviell         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:35:36 by enoviell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (*big == '\0' || big == NULL)
+	if (*little == '\0' || little == NULL)
 		return ((char *) big);
 	if (!len)
 		return (0);
